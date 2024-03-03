@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mudar Cor de Fundo</title>
+    <style>
+        body {
+            transition: background-color 0.5s ease; /* Adiciona uma transição suave */
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<button id="mudarCorBtn">Mudar Cor de Fundo</button>
+
+<script>
+    $(document).ready(function () {
+        $("#mudarCorBtn").click(function () {
+            // Gera uma cor hexadecimal aleatória
+            var corAleatoria = getRandomColor();
+
+            // Define a nova cor de fundo do body
+            $("body").css("background-color", corAleatoria);
+        });
+
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    });
+</script>
+
+</body>
+</html>
