@@ -10,7 +10,7 @@
 
 :root {
     font-size: 62.5%;
-
+    
     --color-base-white: hsl(0, 0%, 100%);
     --color-base-gray-100: hsl(0, 0%, 96%);
     --color-base-gray-300: hsl(240, 6%, 58%);
