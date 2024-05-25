@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -34,6 +35,16 @@ public class PrimeiraController {
     @PostMapping("/metodoComBodyParams")
     public String metodoComBodyParams(@RequestBody Usuario usuario) {
         return "Mêtodo com body params " + usuario.username();
+    }
+
+    @PostMapping("/metodoComHeaders")
+    public String metodoComHeaders(@RequestHeader("name") String name) {
+        return "Mêtodo com body params " + name;
+    }
+
+    @PostMapping("/metodoComListHeaders")
+    public String metodoComListHeaders(@RequestHeader Map<String, String> headers) {
+        return "Mêtodo com body params " + headers.entrySet();
     }
 
     record Usuario(String username) {
